@@ -1,0 +1,21 @@
+{
+  "model": "LogisticRegression",
+  "features": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "balance",
+    "housing",
+    "loan",
+    "campaign"
+  ],
+  "excluded_features": [
+    "duration"
+  ],
+  "rows": 4521,
+  "accuracy": 0.6099,
+  "precision": 0.1608,
+  "recall": 0.5673,
+  "f1_score": 0.2505
+}

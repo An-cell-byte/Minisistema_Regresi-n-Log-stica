@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Propensión a depósito</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card hero">
+      <p class="eyebrow">Bank Marketing · Regresión Logística</p>
+      <h1>Estimar propensión</h1>
+      <p>Captura los datos del cliente para consultar el modelo entrenado. El resultado es una estimación, no una certeza.</p>
+    </section>
+    <section class="card">
+      <form id="predict-form">
+        <label>Edad<input name="age" type="number" min="18" max="100" value="41" required></label>
+        <label>Ocupación<select name="job"><option>technician</option><option>management</option><option>admin.</option><option>blue-collar</option><option>services</option><option>retired</option><option>student</option><option>unemployed</option><option>entrepreneur</option><option>housemaid</option><option>self-employed</option><option>unknown</option></select></label>
+        <label>Estado civil<select name="marital"><option>married</option><option>single</option><option>divorced</option></select></label>
+        <label>Educación<select name="education"><option>secondary</option><option>tertiary</option><option>primary</option><option>unknown</option></select></label>
+        <label>Balance anual promedio<input name="balance" type="number" value="3200" required></label>
+        <label>Crédito hipotecario<select name="housing"><option>yes</option><option>no</option></select></label>
+        <label>Préstamo personal<select name="loan"><option>no</option><option>yes</option></select></label>
+        <label>Contactos en campaña<input name="campaign" type="number" min="1" max="100" value="2" required></label>
+        <button type="submit">Estimar propensión</button>
+      </form>
+      <div id="result" class="result" hidden></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
