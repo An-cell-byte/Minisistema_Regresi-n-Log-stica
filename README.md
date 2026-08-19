@@ -28,7 +28,7 @@ Para que el modelo trabaje con datos que tengan el mismo formato y limpieza con 
 'predict_proba()' se encarga de determinar la probabilidad (0-1) de que se contrate o no el depósito a plazo por el cliente. 
 
 Si el modelo devuelve una probabilidad de 0.72, ¿qué significa ese valor y qué NO significa?
-Significa que el cliente está potencialmente interesado en el depósito a plazo, pero no quiere decir que lo vaya a ser (tampoco quiere decir que el dato sea completamente confiable, dado que debemos consultar métricas como accuracy, precision, recall, f1_score).
+Significa que el cliente está potencialmente interesado en el depósito a plazo, pero no quiere decir que lo vaya a ser (tampoco quiere decir que el dato sea completamente confiable, dado que debemos consultar métricas como accuracy, precision, recall, f1_score). El umbral usado para los valores de probabilidad fue: potencialmente interesado >= 0.5 < baja propensión . 
 
 ¿Por qué duration no debería utilizarse en este sistema si queremos hacer la predicción antes de contactar al cliente?
 Porque la variable 'duration' registra la duración (en segundos) de la última llamada hecha al cliente (es decir, esta variable obtiene un valor después de hacer el primer contacto con el cliente), por lo que no tendría sentido tomarla en cuenta para el sistema si la predección se desea hacer antes de contactar al cliente.
@@ -43,6 +43,14 @@ Caso A — Inferencia válida y evaluación de métricas de entrenamiento
 <img width="959" height="503" alt="Screenshot 2026-08-18 112541" src="https://github.com/user-attachments/assets/b9fe1e66-0783-4b29-bc75-880d99993d1f" />
 <img width="954" height="498" alt="Screenshot 2026-08-18 113900" src="https://github.com/user-attachments/assets/d36ed97d-7c95-42a2-b3ab-bc38c7cad756" />
 
+Explicación de las métricas:
+La métrica `accuracy` representa el porcentaje total de predicciones correctas realizadas por el modelo, incluyendo los clientes que sí contrataron el depósito y los que no. En este caso, el valor obtenido fue de 0.6099, por lo que el modelo acertó aproximadamente el 60.99% de las predicciones.
+
+La métrica `precision` indica, de todos los clientes que el modelo clasificó como interesados en contratar el depósito (`yes`), cuántos realmente pertenecían a esa categoría. Su valor fue de 0.1608, lo que significa que el 16.08% de las predicciones positivas fueron correctas.
+
+La métrica `recall` muestra qué proporción de los clientes que realmente contrataron el depósito fue identificada correctamente por el modelo. El valor obtenido fue de 0.5673, por lo que se detectó aproximadamente el 56.73% de los casos positivos.
+
+La métrica `f1_score` combina `precision` y `recall` en un solo valor mediante su media armónica, por lo que permite evaluar el equilibrio entre ambas métricas. En este entrenamiento se obtuvo un valor de 0.2505; esto refleja que, aunque el modelo identifica una parte importante de los casos positivos, su precisión es baja y existen predicciones positivas incorrectas.
 
 Caso B — Inferencia con error
 
@@ -54,3 +62,4 @@ Caso C — Frontend
 <img width="959" height="503" alt="Screenshot 2026-08-18 113321" src="https://github.com/user-attachments/assets/d419b13b-5f34-49bd-9152-157d79b04ba0" />
 <img width="959" height="485" alt="Screenshot 2026-08-18 113303" src="https://github.com/user-attachments/assets/3320f546-a36d-4ec9-b793-0cf2984710f6" />
 <img width="782" height="423" alt="Screenshot 2026-08-18 112904" src="https://github.com/user-attachments/assets/f0abc6ff-f656-479f-b32c-f167ffab72a4" />
+

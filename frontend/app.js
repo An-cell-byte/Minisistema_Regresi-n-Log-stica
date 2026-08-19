@@ -11,6 +11,6 @@ form.addEventListener('submit', async (event) => {
     const response = await fetch('/predict', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) });
     const body = await response.json();
     if (!response.ok) throw new Error(body.detail || 'Solicitud inválida');
-    result.innerHTML = `<strong>Probabilidad estimada de contratación: ${(body.probability * 100).toFixed(0)}%</strong><br><span>Clase del modelo: ${body.classification}</span><small> Predicción: ${body.prediction}</small>`;
+    result.innerHTML = `<strong>Probabilidad estimada de contratación: ${(body.probability * 100).toFixed(0)}%</strong><br><span>Clase del modelo: ${body.prediction}</span><small> Predicción: ${body.classification}</small>`;
   } catch (error) { result.textContent = `Error: ${error.message}`; }
 });
