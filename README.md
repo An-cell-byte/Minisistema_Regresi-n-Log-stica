@@ -37,3 +37,20 @@ Porque la variable 'duration' registra la duración (en segundos) de la última 
 Habría que modificar los archivos de la API (schemas.py, inference.py) y frontend (index.html, app.js) relativos a la validación y preprocesamiento de datos, además de tener que eliminar el modelo con el entrenamiento actual y volver a entrenarlo con la nueva estructura de los datos. 
 
 ## Evidencia 
+
+Caso A — Inferencia válida y evaluación de métricas de entrenamiento
+
+<img width="959" height="503" alt="Screenshot 2026-08-18 112541" src="https://github.com/user-attachments/assets/b9fe1e66-0783-4b29-bc75-880d99993d1f" />
+<img width="954" height="498" alt="Screenshot 2026-08-18 113900" src="https://github.com/user-attachments/assets/d36ed97d-7c95-42a2-b3ab-bc38c7cad756" />
+
+
+Caso B — Inferencia con error
+
+<img width="959" height="502" alt="Screenshot 2026-08-18 112600" src="https://github.com/user-attachments/assets/4880737c-1712-4698-8a18-f692c7803d6d" />
+<img width="959" height="497" alt="Screenshot 2026-08-18 112614" src="https://github.com/user-attachments/assets/d191078d-a86b-425e-8a9c-1291eb9097e9" />
+
+Caso C — Frontend
+
+<img width="959" height="503" alt="Screenshot 2026-08-18 113321" src="https://github.com/user-attachments/assets/d419b13b-5f34-49bd-9152-157d79b04ba0" />
+<img width="959" height="485" alt="Screenshot 2026-08-18 113303" src="https://github.com/user-attachments/assets/3320f546-a36d-4ec9-b793-0cf2984710f6" />
+<img width="782" height="423" alt="Screenshot 2026-08-18 112904" src="https://github.com/user-attachments/assets/f0abc6ff-f656-479f-b32c-f167ffab72a4" />
